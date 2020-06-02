@@ -1,0 +1,55 @@
+server:
+  port: 8081
+#spring:
+#  datasource:
+#    username: root
+#    password: 5650
+#    url: jdbc:mysql://localhost:3306/springboot?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml #指定主配置文件
+  mapper-locations: classpath:/mybatis/mapper/*.xml # 指定xml映射文件路径
+  type-aliases-package: com.atguigu.springbootauto.dao # 指定mybatis别名包
+logging:
+  level:
+    com.atguigu.springbootauto.dao: debug # 配置日志
+#    第一种配置druid方式
+#spring:
+#  datasource:
+#    username: root
+#    password: 5650
+#    url: jdbc:mysql://localhost:3306/springboot?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    第二种配置druid方式
+spring:
+  datasource:
+    username: root
+    password: 5650
+    url: jdbc:mysql://localhost:3306/springboot?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    filters: stat
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  main:
+    allow-bean-definition-overriding: true
+  redis: #Redis
+    port: 6379
+    host: 192.168.153.111
+  thymeleaf:
+    cache: false
+
+
+user:
+  name: 张三
+  age: 20
+
+baby:
+  name: 王若玙
+  age: 1
+
